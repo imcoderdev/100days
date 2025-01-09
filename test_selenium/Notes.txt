@@ -1,0 +1,7 @@
+a=driver.find_element(By.LINK_TEXT,value="Name of the website like where is link connected write that name here")
+a.click()
+#for typing in the search box
+search=driver.find_element(By.CSS_SELECTOR,value=".cdx-text-input__input")
+search.send_keys("Python")
+#for click=from selenium.webdriver.common.keys import Keys
+also you have to add search.send_keys("Python",keys.Enter)
