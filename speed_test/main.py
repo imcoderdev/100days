@@ -39,8 +39,25 @@ class InternetSpeedTwitterBot:
 
 
     def tweet_at_provider(self):
-        print(self.upload)
-        print(self.down)
+        self.driver.get("https://x.com/home")
+        time.sleep(5)
+        sign_up = self.driver.find_element(By.XPATH,'//*[@id="react-root"]/div/div/div[2]/main/div/div/div[1]/div/div/div[3]/div[4]/a')
+        sign_up.click()
+        time.sleep(3)
+        email_ = self.driver.find_element(By.XPATH,'//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[4]/label/div/div[2]/div/input')
+        email_.send_keys(self.EMAIL, Keys.ENTER)
+        time.sleep(3)
+        username = self.driver.find_element(By.XPATH,'//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input')
+        username.send_keys(self.USERNAME, Keys.ENTER)
+        time.sleep(3)
+        password = self.driver.find_element(By.XPATH,'//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input')
+        password.send_keys(self.PASSWORD, Keys.ENTER)
+        time.sleep(3)
+        write = self.driver.find_element(By.XPATH,'//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div/div/div[3]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div/div/div[2]/div/div/div/div')
+        write.send_keys(f"what is these @vi why my internet speed is {self.up} and {self.down}", Keys.ENTER)
+        time.sleep(2)
+        post = self.driver.find_element(By.XPATH,'//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div[1]/div/div[3]/div/div[2]/div[1]/div/div/div/div[2]/div[2]/div[2]/div/div/div/button/div/span/span')
+        post.click()
 
 bot = InternetSpeedTwitterBot(DRIVER_PATH)
 bot.get_internet_speed()
