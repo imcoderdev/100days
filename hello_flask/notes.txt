@@ -1,0 +1,10 @@
+pwd=current location
+ls=folder in pwd folder
+cd = change directory=change the folder from one to other
+create file=touch main.py(file name)
+rm main.py(delete file)
+current folder(test) to its before folder(desktop) = cd ..
+delete folder= rm -rf Test
+
+
+watch 380 and take notes
